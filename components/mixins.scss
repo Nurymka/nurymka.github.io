@@ -1,0 +1,15 @@
+@mixin min-width($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin min-width-max-width($min-width, $max-width) {
+  @media screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@function bg-tint($color) {
+  @return linear-gradient($color, $color);
+}

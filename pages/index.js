@@ -4,17 +4,7 @@
  * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
  */
 
-import React, { Component } from 'react';
+import React from 'react'
+import Home from './home'
 
-export default class extends Component {
-
-  render() {
-    return (
-      <div>
-        <h1>Home Page</h1>
-        <p>Coming soon.</p>
-      </div>
-    );
-  }
-
-}
+export default Home;

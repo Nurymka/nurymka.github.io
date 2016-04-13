@@ -1,0 +1,250 @@
+@import "../components/variables.scss";
+@import "../components/mixins.scss";
+
+$screen-phablet-min: 690px; // this breakpoint is used to divide the header description into two cols
+$header-min-height: 500px;
+$sm-item-card-height: 500px;
+$md-item-card-height: 500px;
+$lg-item-card-height: 500px;
+
+.bold {
+  font-weight: bold;
+}
+
+.main {
+  display: flex;
+  flex: 1 0 100%;
+  flex-direction: column;
+}
+
+
+/* Header with description */
+
+.fullpageheader {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-image: bg-tint($color-translucent-black), url('/assets/headerphoto.jpg');
+  background-repeat: no-repeat;
+  background-size: auto 130%;
+  background-position: 30% 50%;
+  padding: $spacing-x5;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+
+  .nameblock {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: $spacing-x4;
+    letter-spacing: 1px;
+
+    h1 {
+      font-weight: 300;
+    }
+
+    .lowerlabel {
+      margin: 0.67em 0;
+      font-size: 200%;
+    }
+  }
+
+  .arrowdown {
+    width: 40px;
+    height: auto;
+  }
+}
+
+.desc-container {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+
+  .desc {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    max-width: $content-max-width;
+    padding: $spacing-x5;
+  }
+
+  p {
+    font-size: 100%;
+    margin: 0;
+  }
+}
+
+/* Flexible Desc Divider */
+
+.flexible-divider {
+  background-color: $color-translucent-black !important;
+  margin: $spacing-x5 0;
+}
+
+/* Full Width Titles */
+
+.fullwidth-title {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: $spacing-x6 0;
+
+  .text {
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 0;
+  }
+}
+
+/* Card */
+
+.item-card {
+  position: relative;
+  display: flex;
+  margin-bottom: $spacing-x7;
+  min-height: $sm-item-card-height;
+  max-width: $content-max-width;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+
+  .bg-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .text-container {
+    text-align: center;
+    letter-spacing: 0.7px;
+    margin: 0px $spacing-x2;
+    z-index: 1;
+
+    p {
+      color: white;
+      font-size: 130%;
+      line-height: 1.25em;
+    }
+  }
+
+  .kn {
+    background-image: $black-tint, url('/assets/knbg.jpg');
+  }
+
+  .pc {
+    background-image: $black-tint, url('/assets/pcbg.jpg');
+  }
+
+  .tylr {
+    background-image: $black-tint, url('/assets/tylrbg.jpg');
+  }
+
+  .nkt {
+    background-image: $black-tint, url('/assets/nktbg.jpg');
+  }
+
+  .cube {
+    background-image: $black-tint, url('/assets/cubebg.jpg');
+  }
+
+  .ph {
+    background-image: $black-tint, url('/assets/phbg.jpg');
+  }
+}
+
+.item-card-hoverable {
+  &:hover {
+    .bg-card {
+      transform: scale(1.2, 1.2);
+    }
+  }
+}
+
+/* Media Queries */
+
+@include min-width($screen-phablet-min) {
+  .desc-container .desc {
+    flex-direction: row;
+    justify-content: center;
+
+    p {
+      width: 300px;
+    }
+  }
+
+  .flexible-divider {
+    height: initial !important;
+    margin: 0;
+    width: $divider-thickness;
+    margin-left: $spacing-x5;
+    margin-right: $spacing-x5;
+  }
+}
+
+@include min-width($screen-sm-min) {
+  .fullpageheader {
+    height: 100vh;
+
+    .header {
+      height: initial;
+    }
+  }
+  .item-card {
+    margin-left: $spacing-x5;
+    margin-right: $spacing-x5;
+  }
+}
+
+@include min-width($screen-md-min) {
+  .desc-container .desc p {
+    width: 400px;
+  }
+
+  .item-card {
+    height: $md-item-card-height;
+  }
+
+  .item-card-expanded {
+    height: inherit !important;
+    .top-bar {
+      flex-direction: row;
+
+      .text-container p {
+        margin: 0 $spacing-x7;
+      }
+    }
+  }
+}
+
+@include min-width($screen-lg-min) {
+  .desc-container .desc {
+    width: $content-max-width;
+
+    p {
+      width: 550px;
+    }
+  }
+
+  .item-card {
+    align-self: center;
+    width: $content-max-width;
+    height: $lg-item-card-height;
+  }
+}

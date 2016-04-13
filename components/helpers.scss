@@ -1,0 +1,23 @@
+@import "./variables.scss";
+
+.divider {
+  display: flex;
+  flex-shrink: 0;
+  background-color: white;
+}
+
+.vertical {
+  width: $divider-thickness;
+}
+
+.horizontal {
+  height: $divider-thickness;
+}
+
+.horizontal-margins {
+  margin: 0 $spacing-x5;
+}
+
+.vertical-margins {
+  margin: $spacing-x5 0;
+}

@@ -5,33 +5,72 @@
  */
 
 @import '../variables.scss';
+@import '../typography.scss';
 
 html, body {
   margin: 0;
   padding: 0;
   background-color: $body-bg;
-  color: $text-color;
-  font-family: $font-family-base;
+}
+
+div {
+  box-sizing: border-box;
 }
 
 .Layout {
-  margin: 0 auto;
+  display: flex;
+  flex: 1 0 100%;
+  min-height: 100vh;
 }
 
-@media (min-width: $screen-sm-min) {
-  .Layout {
-    width: calc($screen-sm-min - 18px);
+.loading-container {
+  display: none;
+}
+
+.layout-inner {
+  width: 100%;
+}
+
+.animated {
+  .loading-container {
+    display: initial;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 110px;
+    height: 50px;
+    overflow: hidden;
+    clip: rect(auto, auto, auto, auto);
+    animation-name: logo-expand;
+    animation-duration: $loading-duration;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  }
+
+  .layout-inner {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation-name: show-content;
+    animation-delay: $loading-delay;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: $content-in-duration;
+    animation-timing-function: ease-out;
   }
 }
 
-@media (min-width: $screen-md-min) {
-  .Layout {
-    width: calc($screen-md-min - 22px);
-  }
+@keyframes logo-expand {
+  from {}
+  to {height: 100vh; opacity: 0}
 }
 
-@media (min-width: $screen-lg-min) {
-  .Layout {
-    width: calc($screen-lg-min - 30px);
-  }
+
+@keyframes show-content {
+  from {}
+  to {opacity: 1; height: auto;}
 }

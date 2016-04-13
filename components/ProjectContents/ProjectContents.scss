@@ -1,0 +1,143 @@
+@import "../mixins.scss";
+@import "../variables.scss";
+
+.appstore {
+  display: flex;
+  min-height: 3.75em;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('/assets/appstore.png');
+  flex-shrink: 0;
+}
+
+.screens {
+  width: 100%;
+  height: auto;
+}
+
+.screens-vertical {
+  max-height: 30em;
+  object-fit: contain;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: black;
+  }
+
+  .project-column {
+    display: flex;
+    flex-direction: column;
+
+    .margin-bottom {
+      margin-bottom: $spacing-x7; 
+    }
+
+    *:nth-child(1) {
+      margin-top: 0;
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .link {
+    align-self: center;
+    margin-top: $spacing-x3;
+    font-size: 1.5em;
+  }
+}
+
+.youtube-wrapper {
+  position: relative;
+  width: 100%;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Speedcubing */
+
+$color-gold: #FFD700;
+$color-silver: #A8A8A8;
+$color-bronze: #965A38;
+
+.medals-container {
+  display: flex;
+
+  .medal-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .medal {
+      display: flex;
+      min-height: 5em;
+      mask: url('/assets/medal.svg') no-repeat center;
+      mask-size: contain;
+    }
+
+    .medal-gold {
+      background-color: $color-gold;
+    }
+
+    .medal-silver {
+      background-color: $color-silver;
+    }
+
+    .medal-bronze {
+      background-color: $color-bronze;
+    }
+  }
+}
+
+.reset-size {
+  font-size: 100%;
+}
+
+/* Media Queries */
+
+@include min-width($screen-sm-min) {
+  .youtube-wrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@include min-width($screen-md-min) {
+  .project-content {
+    flex-direction: row;
+    .project-column-half {
+      justify-content: center;
+      width: 50%;
+    }
+  }
+
+  .youtube-wrapper-pc {
+    width: 100%;
+  }
+
+  .screens-tylr {
+    max-height: 26em;
+  }
+}

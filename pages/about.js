@@ -5,14 +5,17 @@
  */
 
 import React, { Component } from 'react';
+import './about.scss'
+import {LoadingLogo} from '../components/helpers.jsx'
 
 export default class extends Component {
 
   render() {
     return (
       <div>
-        <h1>About Us</h1>
-        <p>Coming soon.</p>
+        <div className='test'>
+          <LoadingLogo />
+        </div>
       </div>
     );
   }

@@ -1,0 +1,88 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+html, body {
+  font-family: $font-family-base;
+  font-size: $base-font-size;
+  line-height: 1.4em;
+  letter-spacing: 0.3px;
+  color: $text-color;
+}
+
+b {
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-headlines;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: $spacing-x2 0;
+}
+
+h1 {
+  font-size: 240%;
+}
+
+h2 {
+  font-size: 190%;
+
+}
+
+h3 {
+  font-size: 170%;
+}
+
+h4 {
+  font-size: 150%;
+}
+
+h5 {
+  font-size: 130%;
+}
+
+h6 {
+  font-size: 110%;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+p {
+  color: black;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/EBGaramond12-Italic.ttf');
+  font-style: italic, oblique;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/EBGaramond12-Regular.ttf');
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* Media queries */
+
+@include min-width($screen-sm-min) {
+  html, body {
+    font-size: $sm-base-font-size;
+  }
+}
+
+@include min-width($screen-md-min) {
+  html, body {
+    font-size: $md-base-font-size;
+  }
+}
+
+@include min-width($screen-lg-min) {
+  html, body {
+    font-size: $lg-base-font-size;
+  }
+}

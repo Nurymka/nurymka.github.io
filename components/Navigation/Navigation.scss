@@ -5,28 +5,190 @@
  */
 
 @import '../variables.scss';
+@import '../mixins.scss';
 
-.Navigation {
+$border-color: rgba(255, 255, 255, 0.2);
+$logo: url('/assets/logo.png');
+$logo-black: url('/assets/logo-black.png');
+$color-translucent-white: rgba(255, 255, 255, 0.99);
+
+.headroom-wrapper {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.headroom {
+  position: fixed;
   display: flex;
-  flex-direction: row;
-  margin: 2em 0 5em 0;
+  justify-content: center;
+  width: 100%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  border-bottom: 2px solid $border-color;
+  background-color: transparent;
+  top: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: 1;
+
+  .fa, .hamburger {
+    display: flex;
+    width: 90px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headroom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-x5;
+    width: 100%;
+    max-width: $content-max-width;
+  }
+}
+
+.headroom--unfixed {
+  background-color: transparent;
+}
+
+.headroom--pinned {
+  transform: translateY(0%);
+  background-color: $color-less-translucent-black;
+}
+
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+
+// Logo related
+
+.logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+}
+
+.logo-normal {
+  background-image: $logo;
+}
+
+.logo-black {
+  background-image: $logo-black;
+}
+
+// Navigation Links
+
+.navigation-links {
+  display: none;
   list-style: none;
-  justify-content: flex-end;
+  margin: 0;
+
+  li {
+    margin-right: $spacing-x4;
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .active {
+    text-decoration: underline;
+  }
 }
 
-.Navigation-item {
-  padding: 0 2em;
-}
-
-.Navigation-link {
-  padding: 0.5em 1em;
-  color: $brand-color;
+.link-fading {
   text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
+  color: inherit;
 
   &:hover {
-    border-bottom: 3px solid $brand-color;
-    color: $text-color;
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+// Mobile Nav
+
+.mobile-nav {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-translucent-white;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .close-button {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 60px;
+    justify-content: center;
+  }
+  .navigation-links {
+    display: flex;
+    color: black;
+    flex-direction: column;
+    padding: 0;
+    font-size: 250%;
+    text-align: center;
+    li {
+      margin: $spacing-x7 0;
+    }
+  }
+}
+
+.menu-modal-enter {
+  opacity: 0;
+}
+
+.menu-modal-enter.menu-modal-enter-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.menu-modal-leave {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.menu-modal-leave.menu-modal-leave-active {
+  opacity: 0;
+}
+
+
+// Media Queries
+
+@include min-width($screen-sm-min) {
+  .headroom .fa {
+    display: none;
+  }
+
+  .navigation-links {
+    display: flex;
   }
 }

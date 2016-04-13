@@ -1,0 +1,126 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+$black-tint: linear-gradient($color-translucent-black, $color-less-translucent-black);
+$project-height: 400px;
+
+$kn-color: #FC5555;
+$pc-color: #F07621;
+$tylr-color: #7F51A8;
+
+.project-page {
+  display: flex;
+  flex: 1 0 100%;
+  flex-direction: column;
+}
+
+.project-kn {
+  .content a {
+    color: $kn-color;
+  }
+  .project-header {
+    background-image: $black-tint, url('/assets/knbg.jpg');
+  }
+}
+
+.project-pc {
+  .content a {
+    color: $pc-color;
+  }
+  .project-header {
+    background-image: $black-tint, url('/assets/pcbg.jpg');
+  }
+}
+
+.project-tylr {
+  .content a {
+    color: $tylr-color;
+  }
+  .project-header {
+    background-image: $black-tint, url('/assets/tylrbg.jpg');
+  }
+}
+
+.project-nkt {
+  .project-header {
+    background-image: $black-tint, url('/assets/nktbg.jpg');
+  }
+}
+
+.project-cube {
+  .project-header {
+    background-image: $black-tint, url('/assets/cubebg.jpg');
+  }
+}
+
+.project-ph {
+  .project-header {
+    background-image: $black-tint, url('/assets/phbg.jpg');
+  }
+}
+.project-header {
+  display: flex;
+  height: $project-height;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  .icon {
+    min-width: 5em;
+    min-height: 5em;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .kn {
+    background-image: url('/assets/knicon.png');
+  }
+
+  .pc {
+    background-image: url('/assets/pcicon.png');
+  }
+
+  .nkt {
+    background-image: url('/assets/nkticon.png');
+  }
+
+  .tylr {
+    background-image: url('/assets/tylricon.png');
+  }
+}
+
+.text-container {
+  text-align: center;
+  letter-spacing: 0.7px;
+  margin: 0px $spacing-x2;
+  z-index: 1;
+
+  p {
+    color: white;
+    font-size: 130%;
+    line-height: 1.25em;
+  }
+}
+
+.content {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+
+  .content-inner {
+    display: flex;
+    max-width: $content-max-width;
+    padding: $spacing-x5;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
