@@ -17,6 +17,9 @@
           awaitCloseAnimation: true,
           disableScroll: true,
           disableFocus: true,
+          onShow: (modal) => {
+            modal.firstElementChild.scrollTop = 0;
+          },
         });
       });
     </script>
