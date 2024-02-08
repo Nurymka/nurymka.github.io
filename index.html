@@ -13,14 +13,34 @@
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <script>
       window.addEventListener("DOMContentLoaded", () => {
-        MicroModal.init({
+        const modalOptions = {
           awaitCloseAnimation: true,
           disableScroll: true,
           disableFocus: true,
           onShow: (modal) => {
+            // update url link on modal open
+            const id = modal.id;
+            const regex = /modal-(.*)/;
+            const match = id.match(regex);
+            if (match) {
+              const hash = match[1];
+              window.location.hash = hash;
+            }
+
+            // fix when modal taller than screen height
             modal.firstElementChild.scrollTop = 0;
           },
-        });
+          onClose: (modal) => {
+            window.location.hash = "";
+          },
+        };
+        MicroModal.init(modalOptions);
+
+        // enables shareable links to modals
+        if (window.location.hash) {
+          const hash = window.location.hash.substring(1);
+          MicroModal.show(`modal-${hash}`, modalOptions);
+        }
       });
     </script>
   </head>
