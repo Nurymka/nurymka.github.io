@@ -307,9 +307,19 @@
             </h2>
           </header>
           <main class="mt-4" id="modal-market-updates-content">
-            <video class="lazy rounded-lg" loop muted autoplay playsinline>
-              <source data-src="/video/market-updates.m4v" type="video/mp4" />
-            </video>
+            <div class="loading-wrapper">
+              <video
+                class="lazy rounded-lg"
+                width="1280"
+                height="720"
+                loop
+                muted
+                autoplay
+                playsinline
+              >
+                <source data-src="/video/market-updates.m4v" type="video/mp4" />
+              </video>
+            </div>
             <p class="mt-4">
               I led the backend design, web implementation and designed the
               content pipeline for the Market Updates project.
@@ -409,16 +419,26 @@
             </h2>
           </header>
           <main class="mt-4" id="modal-feature-discovery-content">
-            <video class="lazy rounded-lg" loop muted autoplay playsinline>
-              <source
-                data-src="/webm/feature-discovery.webm"
-                type="video/webm"
-              />
-              <source
-                data-src="/video/feature-discovery.m4v"
-                type="video/mp4"
-              />
-            </video>
+            <div class="loading-wrapper aspect-video">
+              <video
+                class="lazy rounded-lg"
+                width="1280"
+                height="720"
+                loop
+                muted
+                autoplay
+                playsinline
+              >
+                <source
+                  data-src="/webm/feature-discovery.webm"
+                  type="video/webm"
+                />
+                <source
+                  data-src="/video/feature-discovery.m4v"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
             <p class="mt-4">
               With so many new awesome features that were getting shipped out,
               there was a growing problem of finding those new features in-app.
@@ -574,7 +594,14 @@
                 type="image/webp"
                 data-srcset="/webp/ipo-readiness.webp"
               />
-              <img class="lazy" alt="" data-src="/img/ipo-readiness.png" />
+              <img
+                class="lazy with-filter"
+                alt=""
+                width="1500"
+                height="800"
+                src="/lowres/ipo-readiness.webp"
+                data-src="/img/ipo-readiness.png"
+              />
             </picture>
             <p class="mt-4">
               In the summer of 2021, Robinhood became a publicly listed company.
@@ -710,16 +737,26 @@
             </h2>
           </header>
           <main class="mt-4" id="modal-education-lessons-content">
-            <video class="lazy rounded-lg" loop muted autoplay playsinline>
-              <source
-                data-src="/webm/education-lessons.webm"
-                type="video/webm"
-              />
-              <source
-                data-src="/video/education-lessons.m4v"
-                type="video/mp4"
-              />
-            </video>
+            <div class="loading-wrapper aspect-video">
+              <video
+                class="lazy rounded-lg"
+                width="1280"
+                height="720"
+                loop
+                muted
+                autoplay
+                playsinline
+              >
+                <source
+                  data-src="/webm/education-lessons.webm"
+                  type="video/webm"
+                />
+                <source
+                  data-src="/video/education-lessons.m4v"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
             <p class="mt-4">
               I created the first version of education lessons, learning moments
               showcasing the basics of investing. Laid the foundation for
@@ -829,15 +866,24 @@
             </h2>
           </header>
           <main class="mt-4" id="modal-robinhood-recap-content">
-            <video
-              class="lazy rounded-lg max-w-96 max-h-96 mx-auto"
-              loop
-              muted
-              autoplay
-              playsinline
+            <div
+              class="loading-wrapper mx-auto aspect-square max-h-96 w-auto rounded-lg"
             >
-              <source data-src="/video/robinhood-recap.mp4" type="video/mp4" />
-            </video>
+              <video
+                class="lazy mx-auto max-h-96 max-w-96 rounded-lg"
+                loop
+                muted
+                width="384"
+                height="384"
+                autoplay
+                playsinline
+              >
+                <source
+                  data-src="/video/robinhood-recap.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
             <p class="mt-4">
               In 2020, we shipped Robinhood Recap, an experience highlighting
               your highlights of your investing journey through the year (think
@@ -904,9 +950,16 @@
             <picture>
               <source
                 type="image/webp"
-                data-srcset="/webp/robinhood-snacks.webp"
+                idata-srcset="/webp/robinhood-snacks.webp"
               />
-              <img alt="" class="lazy" data-src="/img/robinhood-snacks.png" />
+              <img
+                alt=""
+                class="lazy with-filter"
+                data-src="/img/robinhood-snacks.png"
+                src="/lowres/robinhood-snacks.webp"
+                width="720"
+                height="536"
+              />
             </picture>
             <p>
               I was the main point of contact for the Robinhood Snacks site,
@@ -1006,7 +1059,14 @@
                 type="image/webp"
                 data-srcset="/webp/robinhood-learn.webp"
               />
-              <img alt="" class="lazy" data-src="/img/robinhood-learn.png" />
+              <img
+                alt=""
+                class="lazy with-filter"
+                data-src="/img/robinhood-learn.png"
+                src="/lowres/robinhood-learn.webp"
+                width="720"
+                height="536"
+              />
             </picture>
             <p>
               I was the main point of contact for Robinhood's education hub,
@@ -1153,8 +1213,11 @@
               <source type="image/webp" data-srcset="/webp/rh-banner.webp" />
               <img
                 alt=""
-                class="lazy max-h-32 mt-4 mx-auto object-contain"
+                class="lazy with-filter mx-auto mt-4 max-h-32 object-contain"
+                src="/lowres/rh-banner.webp"
                 data-src="/img/rh-banner.png"
+                width="1823"
+                height="525"
               />
             </picture>
             <p class="mt-4">
@@ -1308,9 +1371,11 @@
           </header>
           <main id="modal-hennge-content">
             <img
-              class="lazy h-16 mt-4 mx-auto"
+              class="lazy mx-auto mt-4 h-16"
               alt=""
               data-src="/img/hennge-banner.svg"
+              width="518"
+              height="64"
             />
             <p class="mt-4">
               HENNGE is a leading cloud-based security provider in Japan. Their
@@ -1400,9 +1465,12 @@
             <picture>
               <source type="image/webp" data-srcset="/webp/kanji-ninja.webp" />
               <img
-                class="lazy w-80 mx-auto"
+                class="lazy with-filter mx-auto w-80"
                 alt="Screenshots from Kanji Ninja"
                 data-src="/img/kanji-ninja.png"
+                src="/lowres/kanji-ninja.webp"
+                width="320"
+                height="415"
               />
             </picture>
             <span class="flex justify-center text-sm text-gray-400"
@@ -1493,8 +1561,11 @@
                 data-srcset="/webp/allsquare-golf.webp"
               />
               <img
-                class="lazy mx-auto max-h-96"
+                class="lazy with-filter mx-auto max-h-96"
                 data-src="/img/allsquare-golf.png"
+                src="/lowres/allsquare-golf.webp"
+                width="602"
+                height="384"
               />
             </picture>
             <span class="flex justify-center text-sm text-gray-400"
@@ -1583,9 +1654,12 @@
                 data-srcset="/webp/princeton-chat.webp"
               />
               <img
-                class="lazy mx-auto"
+                class="lazy with-filter mx-auto"
                 alt="Screenshots from Princeton.Chat app"
                 data-src="/img/princeton-chat.png"
+                src="/lowres/princeton-chat.webp"
+                width="720"
+                height="546"
               />
             </picture>
             <span class="flex justify-center text-sm text-gray-400"
@@ -1650,9 +1724,12 @@
             <picture>
               <source type="image/webp" data-srcset="/webp/taylr.webp" />
               <img
-                class="lazy mx-auto w-96"
+                class="lazy with-filter mx-auto w-96"
                 alt="Screenshots from Taylr app"
                 data-src="/img/taylr.png"
+                src="/lowres/taylr.webp"
+                width="384"
+                height="434"
               />
             </picture>
             <span class="flex justify-center text-sm text-gray-400"
@@ -1776,12 +1853,15 @@
                 data-srcset="/webp/nfactorial-incubator.webp"
               />
               <img
-                class="lazy mx-auto max-h-96 mt-2 object-contain"
+                class="lazy with-filter mx-auto mt-2 max-h-96 object-contain"
                 alt="nFactorial Incubator 2023 Demo Day"
                 data-src="/img/nfactorial-incubator.jpg"
+                src="/lowres/nfactorial-incubator.webp"
+                width="720"
+                height="327"
               />
             </picture>
-            <span class="flex justify-center text-sm text-gray-400 mt-2"
+            <span class="mt-2 flex justify-center text-sm text-gray-400"
               >nFactorial Incubator 2023 Demo Day</span
             >
             <p class="mt-4">
@@ -1889,9 +1969,12 @@
             <picture>
               <source data-srcset="/webp/kanji-ninja.webp" type="image/webp" />
               <img
-                class="lazy w-80 mx-auto"
+                class="lazy with-filter mx-auto w-80"
                 alt="Screenshots from Kanji Ninja"
                 data-src="/img/kanji-ninja.png"
+                src="/lowres/kanji-ninja.webp"
+                width="320"
+                height="415"
               />
             </picture>
             <p class="mt-4">
@@ -1978,9 +2061,12 @@
             <picture>
               <source type="image/webp" data-srcset="/webp/nukte.webp" />
               <img
-                class="lazy w-96 mx-auto"
+                class="lazy with-filter mx-auto w-96"
                 alt="Screenshots from nukte"
                 data-src="/img/nukte.png"
+                src="/lowres/nukte.webp"
+                width="384"
+                height="316"
               />
             </picture>
             <p>
