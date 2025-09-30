@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -31,7 +31,7 @@
             modal.firstElementChild.scrollTop = 0;
           },
           onClose: (modal) => {
-            window.location.hash = "";
+            history.replaceState(null, null, " ");
           },
         };
         MicroModal.init(modalOptions);
@@ -50,19 +50,75 @@
       <header>
         <h1 class="text-2xl font-bold md:text-3xl">Nurym Kudaibergen</h1>
         <p class="mt-4">
-          TL;DR: Software engineer with a front-end focus of 3+ years.
-          Previously at Robinhood, Twise.ai, FanAI. I have built and launched
-          web projects to millions of users. I have built motion-heavy
-          interactive experiences, analytics & charts, CMS-powered pipelines,
-          and revamped web interviews. Experienced in JavaScript, Python. CS @
-          UCLA '20.
+          TL;DR: Full-stack software engineer building products since 2014 (16
+          yo). Previously at Robinhood, Twise.ai. I have built and launched web
+          projects to millions of users. I have built conversational AI
+          assistants, built AI-powered product discovery, created motion-heavy
+          interactive experiences, developed analytics & charts, and revamped
+          web interviews. Experienced in JavaScript (React, Next.js), Python
+          (FastAPI). CS @ UCLA '20.
           <br /><br />
-          Open to learn whatever part of the stack I can be most useful in. Feel
-          free to click around projects for more info! 👨‍🎨
+          Open to learn any part of the stack I can be most useful in.
+          <br />
+          Feel free to click around projects for more info! 👨‍🎨
         </p>
       </header>
       <main class="mt-8">
         <h2 class="text-2xl font-bold max-md:text-xl">Experience</h2>
+        <section class="mt-4">
+          <h3 class="text-xl">
+            🤖
+            <a
+              data-micromodal-trigger="modal-twise"
+              href="javascript:;"
+              class="text-accent-green hover:bg-accent-green-light hover:text-off-black underline transition-all hover:no-underline"
+              >Twise.ai</a
+            >
+          </h3>
+          <span class="text-sm">Backend Lead & AI Engineer | 2024-2025</span>
+          <ul class="list-outside list-disc p-4">
+            <li>
+              Owner & sole maintainer of the backend codebase. Responsible for
+              system health, release management, feature planning.
+            </li>
+            <li>
+              Built
+              <a
+                data-micromodal-trigger="modal-product-discovery"
+                href="javascript:;"
+                class="text-accent-green hover:bg-accent-green-light hover:text-off-black underline transition-all hover:no-underline"
+                >Product Discovery</a
+              >
+              - enabled the AI assistant to make product recommendations
+              relevant to the current conversation.
+            </li>
+            <li>
+              Built
+              <a
+                data-micromodal-trigger="modal-create-from-website"
+                href="javascript:;"
+                class="text-accent-green hover:bg-accent-green-light hover:text-off-black underline transition-all hover:no-underline"
+                >Create from Website</a
+              >
+              - create an AI assistant for a brand from a website URL.
+            </li>
+            <li>
+              Built
+              <a
+                data-micromodal-trigger="modal-insights"
+                href="javascript:;"
+                class="text-accent-green hover:bg-accent-green-light hover:text-off-black underline transition-all hover:no-underline"
+                >Insights</a
+              >
+              - AI assistant analytics showcasing user interaction, costs,
+              conversation volume, top pages, common keywords, etc.
+            </li>
+            <li>
+              Continuously improved AI assistant answer quality: revamped Q&A
+              knowledge card model, enhanced context retention.
+            </li>
+          </ul>
+        </section>
         <section class="mt-4">
           <h3 class="text-xl">
             📈
@@ -448,7 +504,7 @@
               I led the web implementation, working in close collaboration with
               fellow backend/ios/android engineers. From planning the API design
               and estimating timelines to conducting bug bashes, I was there
-              throughout the project. It lead to a huge increase in traffic to
+              throughout the project. It led to a huge increase in traffic to
               Recurring Investments, Crypto, Dividend Reinvestments and other
               products.
             </p>
@@ -2132,6 +2188,358 @@
               </svg>
               nukte. on ProductHunt
             </a>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div class="micromodal-slide" id="modal-twise" aria-hidden="true">
+      <div class="modal__overlay" data-micromodal-close>
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-twise-title"
+          class="modal__container bg-papyrus max-xs:mx-0 m-4 max-w-3xl rounded-2xl p-6 max-md:rounded"
+        >
+          <header>
+            <h2 id="modal-twise-title" class="text-xl">Twise.ai</h2>
+          </header>
+          <main class="mt-4" id="modal-twise-content">
+            <div class="loading-wrapper aspect-video">
+              <video
+                class="lazy rounded-lg"
+                width="1280"
+                height="720"
+                loop
+                muted
+                autoplay
+                playsinline
+              >
+                <source data-src="/webm/twise-demo.webm" type="video/webm" />
+                <source data-src="/video/twise-demo.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <p class="mt-4">
+              Twise.ai is a Spanish startup building AI assistants that speak 92
+              languages, learn from your content, and guide users to the right
+              answers, products, or bookings in seconds.
+              <br /><br />
+              I was the owner & sole maintainer of the backend codebase.
+              Responsible for system health, release management, feature
+              planning.
+            </p>
+            <div class="mt-2 flex gap-2">
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                Python
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                FastAPI
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                MongoDB
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                Azure
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                LangChain
+              </span>
+            </div>
+          </main>
+          <footer class="max-xs:justify-center mt-4 flex flex-wrap gap-2">
+            <button
+              class="bg-main-gray active:bg-main-gray-active hover:bg-main-gray-hover text-md inline-flex items-center gap-1 rounded px-4 py-2 drop-shadow transition-all"
+              data-micromodal-close
+              aria-label="Close this dialog window"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-4 w-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+              Close
+            </button>
+            <a
+              href="https://twise.ai"
+              target="_blank"
+              class="bg-accent-green bg-main-gray active:bg-main-gray-active hover:bg-main-gray-hover text-md inline-flex cursor-pointer items-center gap-1 rounded px-4 py-2 text-gray-800 drop-shadow transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-4 w-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+                />
+              </svg>
+              Twise.ai
+            </a>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div
+      class="micromodal-slide"
+      id="modal-product-discovery"
+      aria-hidden="true"
+    >
+      <div class="modal__overlay" data-micromodal-close>
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-product-discovery-title"
+          class="modal__container bg-papyrus max-xs:mx-0 m-4 max-w-3xl rounded-2xl p-6 max-md:rounded"
+        >
+          <header>
+            <h2 id="modal-product-discovery-title" class="text-xl">
+              Product Discovery
+            </h2>
+          </header>
+          <main class="mt-4" id="modal-product-discovery-content">
+            <div class="loading-wrapper aspect-video">
+              <video
+                class="lazy rounded-lg"
+                width="1280"
+                height="720"
+                loop
+                muted
+                autoplay
+                playsinline
+              >
+                <source
+                  data-src="/webm/twise-demo-maldives.webm"
+                  type="video/webm"
+                />
+                <source
+                  data-src="/video/twise-demo-maldives.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <p class="mt-4">
+              We had a growing number of clients that are businesses using Twise
+              to help customers find their offerings: vacation rentals, events,
+              apparel, etc. Product Discovery was our way to enable the AI
+              assistants (Twises) to be able to search and display products
+              using natural language. I architected & built the backend piece:
+              product XML feed ingestion & sync, product search and filtering
+              using MongoDB Atlas Vector Search.
+            </p>
+            <div class="mt-2 flex gap-2">
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                Python
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                FastAPI
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                MongoDB
+              </span>
+            </div>
+          </main>
+          <footer class="max-xs:justify-center mt-4 flex flex-wrap gap-2">
+            <button
+              class="bg-main-gray active:bg-main-gray-active hover:bg-main-gray-hover text-md inline-flex items-center gap-1 rounded px-4 py-2 drop-shadow transition-all"
+              data-micromodal-close
+              aria-label="Close this dialog window"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-4 w-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+              Close
+            </button>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div
+      class="micromodal-slide"
+      id="modal-create-from-website"
+      aria-hidden="true"
+    >
+      <div class="modal__overlay" data-micromodal-close>
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-create-from-website-title"
+          class="modal__container bg-papyrus max-xs:mx-0 m-4 max-w-3xl rounded-2xl p-6 max-md:rounded"
+        >
+          <header>
+            <h2 id="modal-create-from-website-title" class="text-xl">
+              Create from Website
+            </h2>
+          </header>
+          <main class="mt-4" id="modal-create-from-website-content">
+            <div class="loading-wrapper aspect-video">
+              <video
+                class="lazy rounded-lg"
+                width="1280"
+                height="720"
+                loop
+                muted
+                autoplay
+                playsinline
+              >
+                <source
+                  data-src="/webm/twise-create-from-website.webm"
+                  type="video/webm"
+                />
+                <source
+                  data-src="/video/twise-create-from-website.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <span class="mt-2 flex justify-center text-sm text-gray-400"
+              >An AI assistant built for ByteBerry Studio from their
+              website</span
+            >
+            <p class="mt-4">
+              To be able to quickly demo our AI assistants to new clients, we
+              built a feature that is able to create a new assistant using just
+              the website URL. The newly created AI assistant is able to answer
+              questions about the company, and mimics the visual style of the
+              brand. The feature is powered by Jina.ai for website scraping, and
+              Brandfetch for brand styles & logo.
+            </p>
+            <div class="mt-2 flex gap-2">
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                Python
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                FastAPI
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                Celery
+              </span>
+            </div>
+          </main>
+          <footer class="max-xs:justify-center mt-4 flex flex-wrap gap-2">
+            <button
+              class="bg-main-gray active:bg-main-gray-active hover:bg-main-gray-hover text-md inline-flex items-center gap-1 rounded px-4 py-2 drop-shadow transition-all"
+              data-micromodal-close
+              aria-label="Close this dialog window"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-4 w-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+              Close
+            </button>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div class="micromodal-slide" id="modal-insights" aria-hidden="true">
+      <div class="modal__overlay" data-micromodal-close>
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-insights-title"
+          class="modal__container bg-papyrus max-xs:mx-0 m-4 max-w-3xl rounded-2xl p-6 max-md:rounded"
+        >
+          <header>
+            <h2 id="modal-insights-title" class="text-xl">Insights</h2>
+          </header>
+          <main id="modal-insights-content" class="mt-4">
+            <picture>
+              <source
+                type="image/webp"
+                data-srcset="/webp/twise-insights.webp"
+              />
+              <img
+                class="lazy with-filter rounded-lg"
+                alt="Twise Insights dashboard"
+                data-src="/webp/twise-insights.webp"
+                src="/webp/twise-insights.webp"
+                width="1280"
+                height="720"
+              />
+            </picture>
+            <p class="mt-4">
+              Insights allows Twise (AI assistant) creators to see how their
+              Twise is doing in the wild by showing user interaction summaries,
+              token costs, conversation volume, recent unanswered questions (so
+              creators can quickly add new bits of knowledge), top pages with
+              Twise widget impressions, etc. I have built the initial version on
+              React, and later decoupled the feature from Cube.js, which led to
+              order of magnitude improvements in page generation times.
+            </p>
+            <div class="mt-2 flex gap-2">
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                Python
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                MongoDB
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                Cube.js
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                Trino
+              </span>
+              <span class="bg-off-gray rounded-sm px-2.5 py-0.5 text-xs">
+                React
+              </span>
+            </div>
+          </main>
+          <footer class="max-xs:justify-center mt-4 flex flex-wrap gap-2">
+            <button
+              class="bg-main-gray active:bg-main-gray-active hover:bg-main-gray-hover text-md inline-flex items-center gap-1 rounded px-4 py-2 drop-shadow transition-all"
+              data-micromodal-close
+              aria-label="Close this dialog window"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-4 w-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+              Close
+            </button>
           </footer>
         </div>
       </div>
